@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{233D1A7F-91B6-B88C-2C1E-C385E9218F52}</ProjectGuid>
+	<ProjectGuid>{B9FDD979-23E0-1EA8-D885-BE36287D9F67}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,32 +45,34 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\02. Scripts\LB_Bomb.cs" />
-     <Compile Include="Assets\02. Scripts\LB_LogicGame.cs" />
-     <Compile Include="Assets\02. Scripts\LogicMenu.cs" />
-     <Compile Include="Assets\02. Scripts\UltimateOrbitCamera.cs" />
-     <Compile Include="Assets\02. Scripts\logicGUI.cs" />
-     <Compile Include="Assets\02. Scripts\rotateCamara.cs" />
-     <Compile Include="Assets\02. Scripts\rotateScript.cs" />
-     <Compile Include="Assets\06. Skybox Simple Nebula\Scripts\SmoothCameraOrbit.cs" />
-     <Compile Include="Assets\DeepSpace GUI\scripts\MHDragItem.cs" />
-     <Compile Include="Assets\DeepSpace GUI\scripts\MHScrollbarArrow.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_BGScroller.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByContact.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByTime.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_EvasiveManeuver.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_GameController.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_Mover.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_PlayerController.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_RandomRotator.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_WeaponController.cs" />
-     <Compile Include="Assets\Ultimate Orbit Camera\Scripts\DEMO_UOC_GUI.cs" />
-     <None Include="Assets\06. Skybox Simple Nebula\Simple Nebula - Readme.txt" />
-     <None Include="Assets\DeepSpace GUI\Readme.txt" />
-     <None Include="Assets\Ultimate Orbit Camera\ReadMe.txt" />
-     <None Include="Assets\DeepSpace GUI\gfx\fonts\Sanitrixie SIL OFL Font License.txt" />
-     <None Include="Assets\DeepSpace GUI\gfx\fonts\jupiter_readme.txt" />
+     <Compile Include="Assets\03 - Scripts\LB_Bomb.cs" />
+     <Compile Include="Assets\03 - Scripts\LB_LogicGame.cs" />
+     <Compile Include="Assets\03 - Scripts\LogicMenu.cs" />
+     <Compile Include="Assets\03 - Scripts\SS_Button.cs" />
+     <Compile Include="Assets\03 - Scripts\SS_LogicGame.cs" />
+     <Compile Include="Assets\03 - Scripts\UltimateOrbitCamera.cs" />
+     <Compile Include="Assets\03 - Scripts\logicGUI.cs" />
+     <Compile Include="Assets\03 - Scripts\rotateCamara.cs" />
+     <Compile Include="Assets\03 - Scripts\rotateScript.cs" />
+     <Compile Include="Assets\3rdParty\06. Skybox Simple Nebula\Scripts\SmoothCameraOrbit.cs" />
+     <Compile Include="Assets\3rdParty\DeepSpace GUI\scripts\MHDragItem.cs" />
+     <Compile Include="Assets\3rdParty\DeepSpace GUI\scripts\MHScrollbarArrow.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_BGScroller.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_DestroyByContact.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_DestroyByTime.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_EvasiveManeuver.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_GameController.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_Mover.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_PlayerController.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_RandomRotator.cs" />
+     <Compile Include="Assets\3rdParty\Done\Done_Scripts\Done_WeaponController.cs" />
+     <Compile Include="Assets\3rdParty\Ultimate Orbit Camera\Scripts\DEMO_UOC_GUI.cs" />
+     <None Include="Assets\3rdParty\06. Skybox Simple Nebula\Simple Nebula - Readme.txt" />
+     <None Include="Assets\3rdParty\DeepSpace GUI\Readme.txt" />
+     <None Include="Assets\3rdParty\Ultimate Orbit Camera\ReadMe.txt" />
+     <None Include="Assets\3rdParty\DeepSpace GUI\gfx\fonts\Sanitrixie SIL OFL Font License.txt" />
+     <None Include="Assets\3rdParty\DeepSpace GUI\gfx\fonts\jupiter_readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

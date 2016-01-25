@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{17B66416-387B-E99D-D9F3-72489A429B2E}</ProjectGuid>
+	<ProjectGuid>{B47B888C-BDF7-3A64-814A-ADE0BE6B52C8}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -45,14 +45,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Ultimate Orbit Camera\Scripts\Editor\UltimateOrbitCameraEditor.cs" />
-     <None Include="Assets\06. Skybox Simple Nebula\Simple Nebula - Readme.txt" />
-     <None Include="Assets\DeepSpace GUI\Readme.txt" />
-     <None Include="Assets\Ultimate Orbit Camera\ReadMe.txt" />
-     <None Include="Assets\DeepSpace GUI\gfx\fonts\Sanitrixie SIL OFL Font License.txt" />
-     <None Include="Assets\DeepSpace GUI\gfx\fonts\jupiter_readme.txt" />
+     <Compile Include="Assets\3rdParty\Ultimate Orbit Camera\Scripts\Editor\UltimateOrbitCameraEditor.cs" />
+     <None Include="Assets\3rdParty\06. Skybox Simple Nebula\Simple Nebula - Readme.txt" />
+     <None Include="Assets\3rdParty\DeepSpace GUI\Readme.txt" />
+     <None Include="Assets\3rdParty\Ultimate Orbit Camera\ReadMe.txt" />
+     <None Include="Assets\3rdParty\DeepSpace GUI\gfx\fonts\Sanitrixie SIL OFL Font License.txt" />
+     <None Include="Assets\3rdParty\DeepSpace GUI\gfx\fonts\jupiter_readme.txt" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>D:/marc/Unity/SpaceMultiGames/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>D:/marc/Unity/git/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -111,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{233D1A7F-91B6-B88C-2C1E-C385E9218F52}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{B9FDD979-23E0-1EA8-D885-BE36287D9F67}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
