@@ -54,6 +54,7 @@ public class LB_LogicGame : MonoBehaviour {
 	{
 		//TODO ibestScore hardcoded + uso de PlayerPrefs
 		//int ibestScore = PlayerPrefs.GetInt ("LB_BestScore", 0);
+		// no funciona los botones de reiniciar y 
 		int ibestScore = 30;
 		if (ibestScore < score) {
 			ibestScore = score;
@@ -62,6 +63,7 @@ public class LB_LogicGame : MonoBehaviour {
 		bestScore.text = "Best Score: " + ibestScore;
 		curentScore.text = "Current Score: " + score;
 		panelPlayAgain.SetActive (true);
+
 	}
 	public void DestroyBomb ()
 	{
