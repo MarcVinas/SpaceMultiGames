@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class SS_LogicGame : MonoBehaviour {
 	
 
 	public GameObject[] lights;
-	public Text lbl_Info;
+	public Text info;
 	public AudioClip[] sounds;
-	public int buttonPressed;/*
+	public int buttonPressed;
+	public int currentSequenceIndex = 0;
+
+	public List<int> sequence;
 	//-------------------------------------
 	//-----State Machine info:-------------
 	public enum SimonSays_State {
@@ -55,6 +59,7 @@ public class SS_LogicGame : MonoBehaviour {
 	void Start()
 	{
 		//goto waitingtoplay;
+		m_SM.ChangeState (SimonSays_State.WaitingToPlay);
 	}
 	
 	void Update () 
@@ -82,39 +87,73 @@ public class SS_LogicGame : MonoBehaviour {
 		m_SM.Update ();
 		switch(m_SM.m_eState)
 		{
+			
 		case SimonSays_State.WaitingToPlay:
 		{
 			if (m_SM.IsFirstTime())
-			{    }    
+			{
+				info.text = "Waiting to play, press S to start";
+			}  
+			
+			if (Input.GetKeyDown(KeyCode.S))
+			{
+				m_SM.ChangeState(SimonSays_State.IncreasingSequence);
+				sequence.Clear ();
+			}
 		}
 			break;
+
+
+			
 		case SimonSays_State.IncreasingSequence:
 		{
 			if (m_SM.IsFirstTime())
-			{   }    
-			
+			{}    
+			int newButton = Random.Range(0,4);
+			sequence.Add (newButton);
+			m_SM.ChangeState (SimonSays_State.PlayingSequence);
 		}
 			break;
+
 		case SimonSays_State.PlayingSequence:
 		{
 			if (m_SM.IsFirstTime())
-			{  }    
+			{
+				info.text = "Playing sequence...";
+				currentSequenceIndex = 0;
+				PressButton(sequence[currentSequenceIndex]);
+			}   
+			
+			if (m_SM.m_fTime > 2f)
+			{
+				currentSequenceIndex++;
+				if (currentSequenceIndex >= sequence.Count)
+				{
+					m_SM.ChangeState(SimonSays_State.WaitingUserInput);
+				}
+				else
+				{
+					PressButton(sequence[currentSequenceIndex]);
+					m_SM.m_fTime = 0f;
+				}
+			}
+			
 		}
 			break;
-
+			
 		case SimonSays_State.WaitingUserInput:
-        {   
-            if (m_SM.IsFirstTime())
-            {   
-                //Apagar primer totes les llums:
-                foreach(GameObject light in lights)
-                {
-                    light.SetActive(false);
-                }
-
-                info.text = "It's your turn...";
-                buttonPressed = -1;
-                currentSequenceIndex = 0;
+		{   
+			if (m_SM.IsFirstTime())
+			{   
+				//Apagar primer totes les llums:
+				foreach(GameObject light in lights)
+				{
+					light.SetActive(false);
+				}
+				
+				info.text = "It's your turn...";
+				buttonPressed = -1;
+				currentSequenceIndex = 0;
             }    
 
             if (buttonPressed != -1)
@@ -140,19 +179,31 @@ public class SS_LogicGame : MonoBehaviour {
 		case SimonSays_State.UserInputOK:
 		{
 			if (m_SM.IsFirstTime())
-			{    }    
+			{
+				info.text = "Perfect!!";
+			}    
+			if (m_SM.m_fTime > 2.0f) {
+				m_SM.ChangeState (SimonSays_State.IncreasingSequence);
+			}
+			
 		}
 			break;
 			
 		case SimonSays_State.UserInputFAIL:
 		{
 			if (m_SM.IsFirstTime())
-			{  }    
+			{
+				info.text = "FAIL!!!!!  :(";
+			}    
+			
+			if (m_SM.m_fTime > 2.0f) {
+				m_SM.ChangeState (SimonSays_State.WaitingToPlay);
+			}
 		}
 			break;
 		}
 	}
-
+	
 	void PressButton(int index)
 	{
 		if (index >= lights.Length) {
@@ -175,5 +226,5 @@ public class SS_LogicGame : MonoBehaviour {
 		}
 		buttonPressed = index;
 	}
-	*/
+
 }

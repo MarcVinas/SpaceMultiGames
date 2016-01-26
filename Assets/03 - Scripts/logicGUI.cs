@@ -20,4 +20,9 @@ public class logicGUI : MonoBehaviour {
     {
         Application.LoadLevel(0);
     }
+
+	public void reloadLevel()
+	{
+		Application.LoadLevel (Application.loadedLevel);
+	}
 }
