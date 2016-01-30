@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class LB_LogicGame : MonoBehaviour {
 	public GameObject prefabBomb;
 	public Transform Planet;
+	public AudioClip clipDestroyPlanet;
+
 	public float timer;
 	public float timeToAppear;
 	[HideInInspector]
@@ -19,10 +21,10 @@ public class LB_LogicGame : MonoBehaviour {
 	public GameObject panelPlayAgain;
 	public GameObject prefabExplosion;
 	public Transform planetCenter;
-	private bool finalExlposion;
+	private bool destroyPlanet;
 	// Use this for initialization
 	void Start () {
-		finalExlposion = true;
+		destroyPlanet = false;
 		timer = 0.0f;
 		life = 3;
 		panelPlayAgain.SetActive (false);
@@ -30,35 +32,41 @@ public class LB_LogicGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (life <= 0) {
-			Invoke ("DestroyBomb", 0.3f);
-			//TODO hay alguna forma de controlar que solo se llame una vez?
-			if(finalExlposion){
-				Instantiate (prefabExplosion, planetCenter.position, Quaternion.identity);
-				finalExlposion=false;
-			}
-			GameOver ();
-		} else {
-			lblScore.text = "Score = " + score;
-			lblLife.text = "Life = " + life;
-			timer += Time.deltaTime;
-			if (timer > timeToAppear) {
-				timer = 0.0f;
-				Vector3 position = Planet.position + Random.onUnitSphere * 1.5f; //radius of planet: 2
-				Instantiate (prefabBomb, position, Quaternion.identity);    
-			}
+		if (destroyPlanet)
+			return;
+		if (life == 0) {
+			Instantiate (prefabExplosion, planetCenter.position, Quaternion.identity);
+			GetComponent<AudioSource> ().PlayOneShot (clipDestroyPlanet);
+			destroyPlanet = true;
+			Invoke ("GameOver", 0.75f);
+			planetCenter.GetComponent<Renderer> ().enabled = false;
+			gameObject.BroadcastMessage ("DestroyedPlanet");
+			//Invoke ("DestroyBomb", 0.3f);
+			return;
+		} 
+		lblScore.text = "Score = " + score;
+		lblLife.text = "Life = " + life;
+		timer += Time.deltaTime;
+		if (timer > timeToAppear) {
+			timer = 0.0f;
+			Vector3 position = Planet.position + Random.onUnitSphere * 1.5f; //radius of planet: 2
+			GameObject oExplosion = Instantiate (prefabBomb, position, Quaternion.identity)  as GameObject;    
+			oExplosion.transform.parent = this.transform; 
 		}
 	}
 
+
 	public void GameOver()
 	{
-		//TODO ibestScore hardcoded + uso de PlayerPrefs
-		//int ibestScore = PlayerPrefs.GetInt ("LB_BestScore", 0);
+		Debug.Log("GameOver()");
+		//TODO comprobar que funcione
+
+		int ibestScore = PlayerPrefs.GetInt ("LB_BestScore", 0);
 		// no funciona los botones de reiniciar y 
-		int ibestScore = 30;
+		//int ibestScore = 30;
 		if (ibestScore < score) {
 			ibestScore = score;
-			//PlayerPrefs.SetInt ("LB_BestScore", ibestScore);
+			PlayerPrefs.SetInt ("LB_BestScore", ibestScore);
 		}
 		bestScore.text = "Best Score: " + ibestScore;
 		curentScore.text = "Current Score: " + score;

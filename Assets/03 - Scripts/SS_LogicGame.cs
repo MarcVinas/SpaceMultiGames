@@ -12,6 +12,8 @@ public class SS_LogicGame : MonoBehaviour {
 	public int buttonPressed;
 	public int currentSequenceIndex = 0;
 
+	public Text click;
+
 	public List<int> sequence;
 	//-------------------------------------
 	//-----State Machine info:-------------

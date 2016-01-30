@@ -51,85 +51,10 @@ public class LogicMenu : MonoBehaviour {
 			lights [i].SetActive (false);
 		}
 	}
-	/*void Update () {
-		cube.transform.Rotate(new Vector3(0,10*Time.deltaTime,0));
-		count += Time.deltaTime;
-		float value = Mathf.Cos (count)*0.2f;
-		Vector3 pos = spaceShip.transform.position;
-		posy = posInitShip + value;;
-		spaceShip.position = pos;
-		
-	}*/
-	public void goToLevel(int i)
-	{
-		Application.LoadLevel (i);
-	}
 
 }
 
 
-/*
-Máster Videojuegos 
-Unity 3D  
-(2015 / 2016)
- Profesor Enric Vergara
-
-
-	void Update () {
-		cube.transform.Rotate(new Vector3(0,10*Time.deltaTime,0));
-		count += Time.deltaTime;
-		float value = Mathf.Cos (count)*0.2f;
-		Vector3 pos = spaceShip.position;
-		pos.y = posInitShip + value;;
-		spaceShip.position = pos;
-
-	}
 
 
 
-
-public class RotateCamera : MonoBehaviour {
-	public GameObject station;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		transform.RotateAround (station.transform.position, Vector3.up, 5);
-	}
-}
-
-
-
-using UnityEngine;
-using System.Collections;
-
-public class RotateCamera : MonoBehaviour {
-	public GameObject station;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			transform.RotateAround (station.transform.position, Vector3.up, 5);
-		}else if (Input.GetKey (KeyCode.RightArrow)) {
-			transform.RotateAround (station.transform.position, Vector3.up, -5);
-		}
-
-		float deltaX = Input.GetAxis ("Mouse X");
-		transform.RotateAround (station.transform.position, Vector3.up, deltaX*10);
-
-	}
-}
-
-
-
-
-
-
- * */

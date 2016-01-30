@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using FSMHelper;
 
 
-public class SS_Button : MonoBehaviour {
+public class SimonSays_Button : MonoBehaviour {
 	public int index;
-	public SS_LogicGame lg;
+	public SimonSaysBehaviour mSSB;
+
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -17,7 +19,7 @@ public class SS_Button : MonoBehaviour {
 	}
 	void OnMouseDown()
 	{
-		lg.ClickOnButton (index);
+		mSSB.ClickOnButton (index);
 
 			
 

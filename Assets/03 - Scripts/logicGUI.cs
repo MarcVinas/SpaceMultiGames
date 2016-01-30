@@ -18,11 +18,14 @@ public class logicGUI : MonoBehaviour {
 
     public void goToMenu()
     {
+		Debug.Log("goToMenu()");
+
         Application.LoadLevel(0);
     }
 
 	public void reloadLevel()
 	{
+		Debug.Log("reloadLevel()");
 		Application.LoadLevel (Application.loadedLevel);
 	}
 }

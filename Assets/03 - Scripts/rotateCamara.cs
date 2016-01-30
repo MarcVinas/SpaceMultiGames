@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class rotateCamara : MonoBehaviour {
-	public GameObject center;
+	/*public GameObject center;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,7 +12,7 @@ public class rotateCamara : MonoBehaviour {
 	void Update () {
 		Vector3 rot = new Vector3 (0,1,0);
 		transform.RotateAround (center.transform.position,Vector3.up,1.0f);
-	}
+	}*/
 }
 /*
 
